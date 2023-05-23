@@ -1,0 +1,22 @@
+This file contains all the reference documents I have done research on. 
+Thank you to all authors and publishers for facilitating my knowledge to develop this app :)
+
+============================ Cybersecurity Research ===========================
+CompTIA PenTest+ Guide to Penetration Testing, 1st Edition (written by Rob S. Wilson)
+https://www.cengagebrain.com.mx/shop/isbn/9780357950654?filterBy=Student
+
+John Hammond Youtube Channel
+https://www.youtube.com/user/johnhammond010
+
+Network+ Guide to Networks, 8th Edition (written by Jill West, Jean Andrews, and Tamara Dean)
+https://www.cengagebrain.com.mx/shop/isbn/9781337569330
+
+Network Chuck Youtube Channel
+https://www.youtube.com/user/NetworkChuck
+
+=================================== Tkinter ===================================
+tkinter — Python interface to Tcl/Tk (written by Python Software Foundation (PSF))
+https://docs.python.org/3/library/tkinter.html
+
+Tkinter - the Python interface for Tk (written by Bernd Klein)
+https://python-course.eu/tkinter/
