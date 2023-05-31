@@ -18,8 +18,11 @@ Network Chuck Youtube Channel
 https://www.youtube.com/user/NetworkChuck
 
 =================================== Tkinter ===================================
-tkinter — Python interface to Tcl/Tk (written by Python Software Foundation (PSF))
-https://docs.python.org/3/library/tkinter.html
+TkDocs Tutorial
+https://tkdocs.com/tutorial/index.html
 
 Tkinter - the Python interface for Tk (written by Bernd Klein)
 https://python-course.eu/tkinter/
+
+tkinter — Python interface to Tcl/Tk (written by Python Software Foundation (PSF))
+https://docs.python.org/3/library/tkinter.html
