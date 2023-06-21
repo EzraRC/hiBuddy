@@ -30,7 +30,7 @@ def tcpConnect(ip, portNumber, delay, output):
 
 
 #scanPorts Method
-def scanPorts(hostIP, delay):
+def scanPorts(targetIP, delay):
     # To run tcpConnect simultaneously
     threads = []
     # For printing purposes
@@ -39,7 +39,7 @@ def scanPorts(hostIP, delay):
     # Spawning threads to scan ports
     for i in range(10000):
         # Create a thread for each port to be scanned
-        t = threading.Thread(target=tcpConnect, args=(hostIP, i, delay, output))
+        t = threading.Thread(target=tcpConnect, args=(targetIP, i, delay, output))
         threads.append(t)
 
     # Starting threads
@@ -68,14 +68,37 @@ def scanPorts(hostIP, delay):
 
 #Main method - Conducts the port scan and prints the statuses
 def main():
-    #Get the target ip address
-    hostIP = input("Enter target IP address: ")
-    
-    # Let user know the program is loading
-    print("Scanning ports, please wait.....\n")
+    print('\n=========================== PORT SCAN ===========================')
+    print('                   IP Address Format: x.x.x.x')
+    print('where x can be a one (1), two (11), or three (111) digit number\n')
 
-    # Prompt for target IP address
-    scanPorts(hostIP, 1)
+    while True:
+        #Get the target ip address
+        targetIP = input("Enter target IP address: ")
+
+        # If IP address format is valid
+        octets = targetIP.split(".")
+        if len(octets) == 4 and all(o.isdigit() and 0 <= int(o) <= 255 for o in octets):
+        
+            # Let user know the program is loading
+            print("Scanning ports, please wait.....\n")
+
+            # Prompt for target IP address
+            scanPorts(targetIP, 1)
+            break
+        
+        # Else IP address entered is invalid
+        else:
+            yesOrNo = input("\nAn invalid IP address was entered, would you like to re-enter? (y / n): ")
+
+            # Restart for user to re enter IP address
+            if yesOrNo.lower() == "y":
+                print()
+                continue
+
+            # Else just end the program
+            else:
+                break
 
 # Run main
 if __name__ == "__main__":

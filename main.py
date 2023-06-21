@@ -9,8 +9,8 @@ def clearScreen():
 
 # displayMenu - Provides menu for the user
 def displayMenu():
-    print("=============== hiBuddy! ==============\n")
-    print("1. Scan Ports")
+    print("========================= hiBuddy! ========================\n")
+    print("1. Port Scan - Identify port states for a given IP address")
     print("0. Exit\n")
 
 
@@ -46,16 +46,22 @@ def validateInput():
 
         # Run portStatus program
         os.system("python portStatus.py")
-        input("\nPress ENTER to continue...")
+        input("\nOperation finished! Press ENTER to continue...")
 
     # 0 - Exit the program
     elif userChoice == "0":
-        print("\nThanks for using! Bye bye :)...")
+        print("\nThanks for using! Bye bye and take care :)")
         sys.exit()
 
     # Invalid input
     else:
-        input("\nInvalid choice! Press ENTER to continue...")
+        clearScreen()
+        print("================= ERROR // ERROR // ERROR //=================")
+        print("\nAn invalid choice was entered")
+        print("Please use a choice from the options provided within the menu\n")
+        print("Thank you!")
+        print("\n=============================================================")
+        input("Press ENTER to continue...")
 
 
 if __name__ == "__main__":
