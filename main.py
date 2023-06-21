@@ -45,7 +45,7 @@ def validateInput():
         clearScreen()
 
         # Run portStatus program
-        os.system("python portStatus.py")
+        os.system("python portScan.py")
         print("====================== OPERATION FINISHED! ======================")
         input("\nPress ENTER to continue...")
 
