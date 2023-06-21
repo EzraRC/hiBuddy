@@ -4,6 +4,7 @@ import socket
 import threading
 
 
+#tcpConnect method
 def tcpConnect(ip, portNumber, delay, output):
     # Create a TCP socket and set its options
     tcpSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -14,20 +15,26 @@ def tcpConnect(ip, portNumber, delay, output):
     # Set the timeout for the socket operations to the specified delay value
     tcpSock.settimeout(delay)
 
+    # Attempt to connect to the IP and port
+
+    # If the connection is made, mark the port as Open
     try:
-        # Attempt to connect to the IP and port
         tcpSock.connect((ip, portNumber))
-        output[portNumber] = 'Listening'
+        output[portNumber] = 'Open'
+    # If the connection times out, mark the port as filtered
+    except socket.timeout:
+        output[portNumber] = 'Filtered'
     except:
         # If connection fails, mark the port as empty
         output[portNumber] = ''
 
 
+#scanPorts Method
 def scanPorts(hostIP, delay):
     # To run tcpConnect simultaneously
     threads = []
     # For printing purposes
-    output = {}
+    output = {port: '' for port in range(10000)}
 
     # Spawning threads to scan ports
     for i in range(10000):
@@ -45,22 +52,28 @@ def scanPorts(hostIP, delay):
         # Wait for each thread to finish execution
         threads[i].join()
 
-    #Prompt
-    print('\nThe following ports are listening:')
+    # Prompt
+    print('\n====== RESULTS ======')
+
     # Printing listening ports from 1 to 10000
-    for i in range(10000):
-        
-        # If the port's status is 'Listening'
-        if output[i] == 'Listening':
-            
-            # Print the port number
-            print(str(i), end = ' ')
+    for port, status in output.items():
+
+        #If not closed then print the port and it's status
+        if status != '':
+            print(f"Port {port}: {status}")
+
+    # Print note
+    print('\nNB: Ports not listed can be assumed to be in a \'CLOSED\' state')
 
 
+#Main method
 def main():
     #Get the target ip address
     hostIP = input("Enter target IP address: ")
     
+    # Let user know the program is loading
+    print("Scanning ports, please wait.....\n")
+
     # Prompt for target IP address
     scanPorts(hostIP, 1)
 
