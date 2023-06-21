@@ -66,7 +66,7 @@ def scanPorts(hostIP, delay):
     print('\nNB: Ports not listed can be assumed to be in a \'CLOSED\' state')
 
 
-#Main method
+#Main method - Conducts the port scan and prints the statuses
 def main():
     #Get the target ip address
     hostIP = input("Enter target IP address: ")
