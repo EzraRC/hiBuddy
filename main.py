@@ -46,7 +46,8 @@ def validateInput():
 
         # Run portStatus program
         os.system("python portStatus.py")
-        input("\nOperation finished! Press ENTER to continue...")
+        print("====================== OPERATION FINISHED! ======================")
+        input("\nPress ENTER to continue...")
 
     # 0 - Exit the program
     elif userChoice == "0":
