@@ -28,7 +28,6 @@ def printDisclaimer():
     ]
 
     print("======================= PLEASE READ THIS DISCLAIMER BEFORE CONTINUING =======================\n")
-
     for line in lines:
         print(line)
     print("\n=============================================================================================")
@@ -47,7 +46,7 @@ def validateInput():
 
         # Run portStatus program
         os.system("python portStatus.py")
-        input("\nPress Enter to continue...")
+        input("\nPress ENTER to continue...")
 
     # 0 - Exit the program
     elif userChoice == "0":
@@ -56,7 +55,7 @@ def validateInput():
 
     # Invalid input
     else:
-        input("\nInvalid choice! Press Enter to continue...")
+        input("\nInvalid choice! Press ENTER to continue...")
 
 
 if __name__ == "__main__":
