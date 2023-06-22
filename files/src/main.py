@@ -10,7 +10,8 @@ def clearScreen():
 # displayMenu - Provides menu for the user
 def displayMenu():
     print("========================= hiBuddy! ========================\n")
-    print("1. Port Scan - Identify port states for a given IP address")
+    print("1. Port Scan  - Identify port states for a given IP address")
+    print("2. Live Hosts - Identify live hosts for a given range of IP addresses")
     print("0. Exit\n")
 
 
@@ -46,6 +47,15 @@ def validateInput():
 
         # Run portStatus program
         os.system("python portScan.py")
+        print("====================== OPERATION FINISHED! ======================")
+        input("\nPress ENTER to continue...")
+
+    # 2 - Scan ports and display their states
+    elif userChoice == "2":
+        clearScreen()
+
+        # Run portStatus program
+        os.system("python liveHosts.py")
         print("====================== OPERATION FINISHED! ======================")
         input("\nPress ENTER to continue...")
 
