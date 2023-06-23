@@ -70,7 +70,8 @@ def scanPorts(targetIP, delay):
 def main():
     print('\n=========================== PORT SCAN ===========================')
     print('                   IP Address Format: x.x.x.x')
-    print('where x can be a one (1), two (11), or three (111) digit number\n')
+    print('where x can be a one (1), two (11), or three (111) digit number')
+    print('  NOTE: x cannot be less than 0 AND cannot be more than 255\n\n')
 
     while True:
         #Get the target ip address
