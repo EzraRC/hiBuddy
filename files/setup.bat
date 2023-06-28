@@ -17,5 +17,10 @@ echo.
 python -m pip install ping3
 
 echo.
+echo =================== Installing art package... =====================
+echo.
+python -m pip install art
+
+echo.
 echo ==================== Installation completed. ========================
 pause
