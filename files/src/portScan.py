@@ -53,7 +53,7 @@ def scanPorts(targetIP, delay):
         threads[i].join()
 
     # Prompt
-    print('\n====== RESULTS ======')
+    print('====== RESULTS ======')
 
     # Printing listening ports from 1 to 10000
     for port, status in output.items():
