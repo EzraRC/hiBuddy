@@ -1,6 +1,7 @@
 import datetime
 import os
 import sys
+from art import *
 
 # clearScreen method - Clears the screen for cleaner output and improved readability
 def clearScreen():
@@ -9,7 +10,9 @@ def clearScreen():
 
 # displayMenu - Provides menu for the user
 def displayMenu():
-    print("========================= hiBuddy! ========================\n")
+    #print("========================= hiBuddy! ========================\n")
+    tprint("            hiBuddy")
+    print("====================================================================\n")
     print("1. Port Scan  - Identify port states for a given IP address")
     print("2. Live Hosts - Identify live hosts for a given range of IP addresses")
     print("0. Exit\n")
@@ -17,6 +20,7 @@ def displayMenu():
 
 # printDisclaimer
 def printDisclaimer():
+    date = datetime.datetime.now().strftime("Date: %m-%d-%Y || Time: %H:%M:%S")
     lines = [
         "hiBuddy is a complete Network Enumeration Tool with a major focus on reconnaissance features",
         "such as Port Scanning, System Information, and much more. The creator of this program, EzraRC,",
@@ -25,7 +29,7 @@ def printDisclaimer():
         "and programs to help automate the procedure. Before using this program, PLEASE be aware of your",
         "country or state's cybersecurity and information technology laws. Thank you! :)",
         "\n\"I, the current user, am responsible for all of my actions done while using this program.\"",
-        "Date: {}".format(datetime.datetime.now())
+        "{}".format(date)
     ]
 
     print("======================= PLEASE READ THIS DISCLAIMER BEFORE CONTINUING =======================\n")
