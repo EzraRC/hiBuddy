@@ -1,7 +1,10 @@
 @echo off
 echo =================== hiBuddy Packages Installer ======================
 echo.
-echo      Press Enter to install Python 3 and the ping3 Python package
+echo     By pressing ENTER, you are agreeing to install the following:
+echo         - Python 3
+echo         - ping3 (Python Package)
+echo         - art (Python Package)
 pause > nul
 
 echo.
